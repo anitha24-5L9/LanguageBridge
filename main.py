@@ -27,7 +27,6 @@ def translate_text():
         if not text:
             return jsonify({"error": "No text provided"}), 400
 
-        # Perform translation
         result = translator.translate(
             text,
             src=source,
@@ -45,5 +44,6 @@ def translate_text():
         }), 500
 
 
+# ✅ IMPORTANT: Render uses this (NO debug mode)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
